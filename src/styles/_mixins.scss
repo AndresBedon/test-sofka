@@ -1,0 +1,85 @@
+// Media queries
+@mixin media-breakpoint-up($name) {
+  $min: map-get($grid-breakpoints, $name);
+  @if $min != 0 {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($name) {
+  $max: map-get($grid-breakpoints, $name) - 1px;
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+// Button variants
+@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%)) {
+  color: color-contrast($background);
+  background-color: $background;
+  border-color: $border;
+
+  &:hover {
+    color: color-contrast($hover-background);
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($background, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+  }
+}
+
+// Form controls
+@mixin form-control-focus() {
+  &:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+@mixin form-validation-state($state, $color) {
+  .#{$state}-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: $color;
+  }
+
+  .form-control.is-#{$state} {
+    border-color: $color;
+
+    &:focus {
+      border-color: $color;
+      box-shadow: 0 0 0 0.2rem rgba($color, 0.25);
+    }
+  }
+}
+
+// Card component
+@mixin card($padding: 1.25rem) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: $border-radius;
+  
+  .card-body {
+    flex: 1 1 auto;
+    padding: $padding;
+  }
+}

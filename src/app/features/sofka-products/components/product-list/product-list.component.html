@@ -1,0 +1,120 @@
+<div class="product-list-container">
+  <!-- Header con búsqueda -->
+  <div class="header">
+    <div class="header-content">
+      <div class="bank-logo">
+        <img src="assets/bank-icon.svg" alt="Banco" />
+        <span>BANCO</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-container">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search..."
+      [value]="searchTerm"
+      (input)="onSearchInputChange($event)"
+    />
+  </div>
+
+  <!-- Loading state -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Cargando productos...</p>
+  </div>
+
+  <!-- Error state -->
+  <div *ngIf="error && !loading" class="error-container">
+    <p class="error-message">{{ error }}</p>
+    <button class="retry-button" (click)="retry()">Reintentar</button>
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="!loading && !error" class="content">
+    <!-- Products table -->
+    <div class="table-container">
+      <table class="products-table">
+        <thead>
+          <tr>
+            <th>Logo</th>
+            <th>Nombre del producto</th>
+            <th>
+              Descripción
+              <img src="assets/info-icon.svg" alt="Info" class="info-icon" />
+            </th>
+            <th>
+              Fecha de liberación
+              <img src="assets/info-icon.svg" alt="Info" class="info-icon" />
+            </th>
+            <th>
+              Fecha de reestructuración
+              <img src="assets/info-icon.svg" alt="Info" class="info-icon" />
+            </th>
+            <th *ngIf="showActions"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let product of paginatedProducts; trackBy: trackByProductId"
+          >
+            <td>
+              <div class="logo-container">
+                <img
+                  [src]="product.logo"
+                  [alt]="product.name"
+                  class="product-logo"
+                />
+              </div>
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.date_release | date : "dd/MM/yyyy" }}</td>
+            <td>{{ product.date_revision | date : "dd/MM/yyyy" }}</td>
+            <td *ngIf="showActions" class="actions-column">
+              <div class="dropdown">
+                <button class="dropdown-toggle" type="button">⋮</button>
+                <div class="dropdown-menu">
+                  <button
+                    class="dropdown-item"
+                    (click)="onEditProduct(product)"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    class="dropdown-item delete"
+                    (click)="onDeleteProduct(product)"
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer with pagination -->
+    <div class="footer">
+      <div class="results-info">
+        {{ displayRange }}
+      </div>
+
+      <div class="pagination-controls">
+        <select
+          class="page-size-select"
+          [value]="pageSize"
+          (change)="onPageSizeSelectChange($event)"
+        >
+          <option *ngFor="let option of paginationOptions" [value]="option">
+            {{ option }}
+          </option>
+        </select>
+      </div>
+      -
+    </div>
+  </div>
+</div>

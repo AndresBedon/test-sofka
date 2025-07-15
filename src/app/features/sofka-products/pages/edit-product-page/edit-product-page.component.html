@@ -1,0 +1,25 @@
+<div class="edit-product-page">
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Cargando producto...</p>
+  </div>
+
+  <!-- Product Form -->
+  <app-product-form
+    *ngIf="!loading && product && !error"
+    [product]="product"
+    [isEditMode]="true"
+    (formSubmit)="onFormSubmit($event)"
+    (formCancel)="onFormCancel()"
+  ></app-product-form>
+
+  <!-- Error State -->
+  <div *ngIf="error" class="error-container">
+    <h3>Error</h3>
+    <p>{{ error }}</p>
+    <button class="btn btn-primary" (click)="onFormCancel()">
+      Volver a la lista
+    </button>
+  </div>
+</div>

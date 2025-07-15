@@ -1,0 +1,37 @@
+<div class="products-page">
+  <!-- Product List with Add Button -->
+  <div class="list-container">
+    <app-product-list
+      [showActions]="true"
+      (editProduct)="onEditProduct($event)"
+      (deleteProduct)="onDeleteProduct($event)"
+    ></app-product-list>
+
+    <!-- Add Button (positioned as in Design D3) -->
+    <button class="add-product-btn" (click)="onAddProduct()">Agregar</button>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <app-confirmation-modal
+    [isOpen]="showDeleteModal"
+    [title]="'Confirmar Eliminación'"
+    [message]="
+      '¿Estás seguro de eliminar el producto ' +
+      (productToDelete?.name || '') +
+      '?'
+    "
+    [confirmText]="'Eliminar'"
+    [cancelText]="'Cancelar'"
+    [loading]="deleting"
+    confirmButtonClass="btn-danger"
+    (confirm)="onConfirmDelete()"
+    (cancel)="onCancelDelete()"
+    (modalClose)="onCancelDelete()"
+  ></app-confirmation-modal>
+
+  <!-- Error Alert -->
+  <div *ngIf="error" class="error-alert">
+    <p>{{ error }}</p>
+    <button (click)="error = null">×</button>
+  </div>
+</div>
