@@ -3,8 +3,8 @@ export interface SofkaProduct {
   name: string;
   description: string;
   logo: string;
-  date_release: string; // Format: YYYY-MM-DD
-  date_revision: string; // Format: YYYY-MM-DD
+  date_release: string;
+  date_revision: string;
 }
 
 export interface ApiResponse<T> {
@@ -27,7 +27,7 @@ export interface ErrorResponse {
   errors?: any;
 }
 
-// Tipos para formularios
+
 export interface ProductFormData {
   id: string;
   name: string;
@@ -37,13 +37,12 @@ export interface ProductFormData {
   date_revision: string;
 }
 
-// Tipos para validaciones
+
 export interface ValidationError {
   field: string;
   message: string;
 }
 
-// Constantes para la aplicación
 export const API_ENDPOINTS = {
   //BASE_URL: 'http://localhost:3002',
   BASE_URL: '',

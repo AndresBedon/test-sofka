@@ -29,12 +29,12 @@ export class ProductFormComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private sofkaProductService: SofkaProductService
   ) {
-    // Inicializar formulario básico, se reconfigurará en ngOnInit
+    
     this.productForm = this.fb.group({});
   }
 
   ngOnInit(): void {
-    // Crear el formulario con la configuración correcta según el modo
+   
     this.productForm = this.createForm();
     
     this.setupIdValidation();
@@ -43,7 +43,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
       this.loadProductData();
     }
 
-    // Auto-calculate revision date when release date changes
+    
     this.productForm.get('date_release')?.valueChanges
       .pipe(takeUntil(this.destroy$))
       .subscribe(releaseDate => {
@@ -62,21 +62,21 @@ export class ProductFormComponent implements OnInit, OnDestroy {
    * Crea el formulario reactivo con validaciones
    */
   private createForm(): FormGroup {
-    // Configurar validadores síncronos básicos
+    
     const idValidators = [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(10)
     ];
 
-    // Solo agregar validador asíncrono si NO estamos en modo edición
+    
     const idAsyncValidators = this.isEditMode ? [] : [this.idExistsValidator.bind(this)];
 
     return this.fb.group({
       id: [
         '', 
         idValidators,
-        idAsyncValidators // Array vacío en modo edición
+        idAsyncValidators 
       ],
       name: [
         '', 
@@ -139,7 +139,6 @@ export class ProductFormComponent implements OnInit, OnDestroy {
         date_revision: this.product.date_revision
       });
 
-      // Disable ID field in edit mode
       this.productForm.get('id')?.disable();
     }
   }
@@ -194,7 +193,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
       this.submitting = true;
       
       const formData: ProductFormData = {
-        ...this.productForm.getRawValue() // getRawValue incluye campos disabled
+        ...this.productForm.getRawValue()
       };
 
       this.formSubmit.emit(formData);

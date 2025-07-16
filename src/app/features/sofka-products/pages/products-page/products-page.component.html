@@ -1,5 +1,4 @@
 <div class="products-page">
-  <!-- Product List with Add Button -->
   <div class="list-container">
     <app-product-list
       [showActions]="true"
@@ -8,7 +7,6 @@
     ></app-product-list>
   </div>
 
-  <!-- Delete Confirmation Modal -->
   <app-confirmation-modal
     [isOpen]="showDeleteModal"
     [title]="'Confirmar Eliminación'"
@@ -26,7 +24,6 @@
     (modalClose)="onCancelDelete()"
   ></app-confirmation-modal>
 
-  <!-- Error Alert -->
   <div *ngIf="error" class="error-alert">
     <p>{{ error }}</p>
     <button (click)="error = null">×</button>

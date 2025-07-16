@@ -50,7 +50,6 @@ export class ProductsPageComponent implements OnInit {
             this.deleting = false;
             this.showDeleteModal = false;
             this.productToDelete = null;
-            // El servicio actualizará automáticamente la lista
           },
           error: (error) => {
             this.deleting = false;

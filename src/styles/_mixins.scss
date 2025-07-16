@@ -1,4 +1,4 @@
-// Media queries
+
 @mixin media-breakpoint-up($name) {
   $min: map-get($grid-breakpoints, $name);
   @if $min != 0 {
@@ -17,7 +17,6 @@
   }
 }
 
-// Button variants
 @mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%)) {
   color: color-contrast($background);
   background-color: $background;
@@ -38,7 +37,6 @@
   }
 }
 
-// Form controls
 @mixin form-control-focus() {
   &:focus {
     border-color: #80bdff;
@@ -66,7 +64,7 @@
   }
 }
 
-// Card component
+
 @mixin card($padding: 1.25rem) {
   position: relative;
   display: flex;

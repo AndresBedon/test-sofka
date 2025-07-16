@@ -5,6 +5,14 @@ import { of, throwError } from 'rxjs';
 import { ProductListComponent } from './product-list.component';
 import { SofkaProductService } from '../../../../core/services/sofka-product.service';
 import { SofkaProduct } from '../../../../core/models/sofka-product.interface';
+import { Component } from '@angular/core';
+
+// Mock del HeaderComponent
+@Component({
+  selector: 'app-header',
+  template: '<div>Header Mock</div>'
+})
+class MockHeaderComponent { }
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -37,7 +45,7 @@ describe('ProductListComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      declarations: [ProductListComponent],
+      declarations: [ProductListComponent, MockHeaderComponent],
       providers: [
         { provide: SofkaProductService, useValue: spy }
       ]

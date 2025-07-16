@@ -7,6 +7,13 @@ import { AddProductPageComponent } from './add-product-page.component';
 import { SofkaProductService } from '../../../../core/services/sofka-product.service';
 import { ProductFormData, SofkaProduct } from '../../../../core/models/sofka-product.interface';
 
+// Mock del HeaderComponent
+@Component({
+  selector: 'app-header',
+  template: '<div>Header Mock</div>'
+})
+class MockHeaderComponent { }
+
 // Mock component for app-product-form
 @Component({
   selector: 'app-product-form',
@@ -49,7 +56,8 @@ describe('AddProductPageComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         AddProductPageComponent,
-        MockProductFormComponent
+        MockProductFormComponent,
+        MockHeaderComponent
       ],
       providers: [
         { provide: Router, useValue: mockRouter },

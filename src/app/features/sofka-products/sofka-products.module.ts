@@ -18,19 +18,18 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { SofkaProductsRoutingModule } from './sofka-products-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 
 @NgModule({
   declarations: [
-    // Pages
+    // Paginas
     ProductsPageComponent,
     AddProductPageComponent,
     EditProductPageComponent,
     
-    // Components
+    // Componentes
     ProductListComponent,
     ProductFormComponent,
-    HeaderComponent
+    
   ],
   imports: [
     CommonModule,
@@ -38,7 +37,6 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
     HttpClientModule,
     SofkaProductsRoutingModule,
     SharedModule,
-    
   ]
 })
 export class SofkaProductsModule { }

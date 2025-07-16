@@ -12,21 +12,17 @@
     <button class="add-product-btn" (click)="onAddProduct()">Agregar</button>
   </div>
 
-  <!-- Loading state -->
   <div *ngIf="loading" class="loading-container">
     <div class="loading-spinner"></div>
     <p>Cargando productos...</p>
   </div>
 
-  <!-- Error state -->
   <div *ngIf="error && !loading" class="error-container">
     <p class="error-message">{{ error }}</p>
     <button class="retry-button" (click)="retry()">Reintentar</button>
   </div>
 
-  <!-- Content -->
   <div *ngIf="!loading && !error" class="content">
-    <!-- Products table -->
     <div class="table-container">
       <table class="products-table">
         <thead>
@@ -98,7 +94,6 @@
       </table>
     </div>
 
-    <!-- Footer with pagination -->
     <div class="footer">
       <div class="results-info">
         {{ displayRange }}

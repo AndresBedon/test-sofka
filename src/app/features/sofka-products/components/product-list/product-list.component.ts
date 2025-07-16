@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  @Input() showActions = false; // Para Senior level (F5, F6)
+  @Input() showActions = false; 
   @Output() editProduct = new EventEmitter<SofkaProduct>();
   @Output() deleteProduct = new EventEmitter<SofkaProduct>();
 
@@ -100,7 +100,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
       .subscribe(products => {
         this.filteredProducts = products;
         this.totalProducts = products.length;
-        this.currentPage = 1; // Reset to first page
+        this.currentPage = 1; 
         this.updatePagination();
       });
   }

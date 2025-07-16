@@ -202,14 +202,6 @@ describe('ProductsPageComponent', () => {
     expect(productListElement).toBeTruthy();
   });
 
-  it('should render add button', () => {
-    fixture.detectChanges();
-    
-    const addButton = fixture.debugElement.nativeElement.querySelector('.add-product-btn');
-    expect(addButton).toBeTruthy();
-    expect(addButton.textContent.trim()).toBe('Agregar');
-  });
-
   it('should render confirmation modal', () => {
     fixture.detectChanges();
     

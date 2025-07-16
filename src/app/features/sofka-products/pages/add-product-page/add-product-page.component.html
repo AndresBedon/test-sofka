@@ -6,7 +6,6 @@
     (formCancel)="onFormCancel()"
   ></app-product-form>
 
-  <!-- Error Alert -->
   <div *ngIf="error" class="error-alert">
     <p>{{ error }}</p>
     <button (click)="error = null">×</button>

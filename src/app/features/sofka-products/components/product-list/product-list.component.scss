@@ -100,10 +100,7 @@
     background: white;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.table-container {
-  //overflow-x: auto;
+        overflow: auto;
 }
 
 .products-table {
@@ -170,7 +167,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #6c757d; // gris oscuro
+  background: #6c757d;
   color: white;
   display: flex;
   align-items: center;
@@ -272,8 +269,22 @@
   }
 }
 
-// Responsive design
+
 @media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+
+    .search-input {
+      width: 100%;
+      max-width: none;
+    }
+
+    .add-product-btn {
+      width: 100%;
+    }
+  }
   .search-container .search-input {
     width: 100%;
     max-width: 300px;
@@ -293,3 +304,4 @@
     text-align: center;
   }
 }
+

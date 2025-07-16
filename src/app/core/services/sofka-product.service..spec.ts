@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { SofkaProductService } from './sofka-product.service';
-import { SofkaProduct, API_ENDPOINTS, ProductFormData } from '../models/sofka-product.interface';
+import { SofkaProduct,API_ENDPOINTS,ProductFormData } from '../models/sofka-product.interface';
 
 describe('SofkaProductService', () => {
   let service: SofkaProductService;

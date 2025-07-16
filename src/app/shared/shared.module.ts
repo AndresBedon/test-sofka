@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }
