@@ -87,11 +87,6 @@ describe('ProductsPageComponent', () => {
     expect(component.error).toBeNull();
   });
 
-  it('should navigate to add product page', () => {
-    component.onAddProduct();
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/products/add']);
-  });
-
   it('should navigate to edit product page', () => {
     component.onEditProduct(mockProduct);
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/products/edit', mockProduct.id]);

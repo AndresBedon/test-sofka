@@ -4,6 +4,7 @@ import { takeUntil, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import { SofkaProduct, PAGINATION_OPTIONS } from '../../../../core/models/sofka-product.interface';
 import { SofkaProductService } from '../../../../core/services/sofka-product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -25,12 +26,14 @@ export class ProductListComponent implements OnInit, OnDestroy {
   totalProducts = 0;
   loading = false;
   error: string | null = null;
+
+  brokenImages: { [productId: string]: boolean } = {};
   
   readonly paginationOptions = PAGINATION_OPTIONS;
   private destroy$ = new Subject<void>();
   private searchSubject = new Subject<string>();
 
-  constructor(private sofkaProductService: SofkaProductService) {}
+  constructor(private sofkaProductService: SofkaProductService,private router: Router,) {}
 
   ngOnInit(): void {
     this.setupSearch();
@@ -197,5 +200,23 @@ onPageSizeSelectChange(event: Event): void {
   if (target) {
     this.onPageSizeChange(+target.value);
   }
+}
+
+/**
+   * Navega al formulario de agregar producto
+   */
+  onAddProduct(): void {
+    this.router.navigate(['/products/add']);
+  }
+
+  onImageError(productId: string): void {
+  this.brokenImages[productId] = true;
+}
+
+getInitials(name: string): string {
+  if (!name) return '';
+  const words = name.trim().split(' ');
+  if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
 }
 }

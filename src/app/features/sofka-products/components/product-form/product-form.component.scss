@@ -8,6 +8,13 @@
   overflow: hidden;
 }
 
+.product-form {
+     border-top: solid 3px #c3c3c5;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
 .header {
   background: #f8f9fa;
   padding: 20px;
@@ -35,14 +42,15 @@
 }
 
 .form-content {
-  padding: 40px;
+  padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 .form-title {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 30px;
+    font-weight: 600;
   color: #212529;
 }
 
@@ -117,13 +125,14 @@
   border: none;
   border-radius: 4px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;
   gap: 8px;
   min-width: 120px;
+  height: 60px;
   justify-content: center;
 
   &:disabled {
@@ -142,21 +151,21 @@
 }
 
 .btn-primary {
-  background: #ffc107;
-  color: #212529;
+  background: #fdf1a2;
+  color: #303e6c;
 
   &:hover:not(:disabled) {
-    background: #e0a800;
+    background: #ffc107;
     transform: translateY(-1px);
   }
 }
 
 .btn-secondary {
-  background: #6c757d;
-  color: white;
+  background: #eaecf2;
+  color: #303e6c;
 
   &:hover:not(:disabled) {
-    background: #5a6268;
+    background: #e5e9f3;
     transform: translateY(-1px);
   }
 }

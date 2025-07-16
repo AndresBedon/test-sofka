@@ -22,13 +22,6 @@ export class ProductsPageComponent implements OnInit {
   ngOnInit(): void {}
 
   /**
-   * Navega al formulario de agregar producto
-   */
-  onAddProduct(): void {
-    this.router.navigate(['/products/add']);
-  }
-
-  /**
    * Navega al formulario de editar producto
    */
   onEditProduct(product: SofkaProduct): void {

@@ -6,9 +6,6 @@
       (editProduct)="onEditProduct($event)"
       (deleteProduct)="onDeleteProduct($event)"
     ></app-product-list>
-
-    <!-- Add Button (positioned as in Design D3) -->
-    <button class="add-product-btn" (click)="onAddProduct()">Agregar</button>
   </div>
 
   <!-- Delete Confirmation Modal -->
@@ -20,7 +17,7 @@
       (productToDelete?.name || '') +
       '?'
     "
-    [confirmText]="'Eliminar'"
+    [confirmText]="'Confirmar'"
     [cancelText]="'Cancelar'"
     [loading]="deleting"
     confirmButtonClass="btn-danger"

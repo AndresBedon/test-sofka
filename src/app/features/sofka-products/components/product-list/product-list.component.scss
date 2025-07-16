@@ -4,36 +4,13 @@
   padding: 20px;
 }
 
-.header {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px 8px 0 0;
-  border-bottom: 1px solid #e9ecef;
-
-  .header-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .bank-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    font-size: 18px;
-    color: #495057;
-
-    img {
-      width: 24px;
-      height: 24px;
-    }
-  }
-}
-
 .search-container {
-  padding: 20px;
-  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #f8f9fa;
   border-bottom: 1px solid #e9ecef;
 
   .search-input {
@@ -47,6 +24,25 @@
       outline: none;
       border-color: #80bdff;
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  .add-product-btn {
+    background: #f5df62;
+    color: #303e6c;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: #ffc107;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
   }
 }
@@ -100,13 +96,14 @@
 }
 
 .content {
-  background: white;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    background: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .table-container {
-  overflow-x: auto;
+  //overflow-x: auto;
 }
 
 .products-table {
@@ -152,6 +149,36 @@
       background: #f8f9fa;
     }
   }
+
+  .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.product-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f8f9fa;
+}
+
+.fallback-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6c757d; // gris oscuro
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
 
   .actions-column {
     width: 50px;
@@ -223,7 +250,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: #f8f9fa;
+  background: #ffffff;
   border-top: 1px solid #e9ecef;
 
   .results-info {

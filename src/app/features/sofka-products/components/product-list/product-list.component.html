@@ -1,15 +1,5 @@
+<app-header></app-header>
 <div class="product-list-container">
-  <!-- Header con búsqueda -->
-  <div class="header">
-    <div class="header-content">
-      <div class="bank-logo">
-        <img src="assets/bank-icon.svg" alt="Banco" />
-        <span>BANCO</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Barra de búsqueda -->
   <div class="search-container">
     <input
       type="text"
@@ -18,6 +8,8 @@
       [value]="searchTerm"
       (input)="onSearchInputChange($event)"
     />
+
+    <button class="add-product-btn" (click)="onAddProduct()">Agregar</button>
   </div>
 
   <!-- Loading state -->
@@ -62,11 +54,20 @@
           >
             <td>
               <div class="logo-container">
-                <img
-                  [src]="product.logo"
-                  [alt]="product.name"
-                  class="product-logo"
-                />
+                <ng-container *ngIf="!brokenImages[product.id]; else fallback">
+                  <img
+                    [src]="product.logo"
+                    [alt]="product.name"
+                    class="product-logo"
+                    (error)="onImageError(product.id)"
+                  />
+                </ng-container>
+
+                <ng-template #fallback>
+                  <div class="fallback-initials">
+                    {{ getInitials(product.name) }}
+                  </div>
+                </ng-template>
               </div>
             </td>
             <td>{{ product.name }}</td>
@@ -114,7 +115,6 @@
           </option>
         </select>
       </div>
-      -
     </div>
   </div>
 </div>

@@ -63,10 +63,10 @@
   padding: 24px;
 
   .modal-message {
-    margin: 0;
-    font-size: 16px;
+        margin: 20px;
+    font-size: 20px;
     line-height: 1.5;
-    color: #495057;
+    color: #0a0a0a;
   }
 }
 
@@ -75,23 +75,25 @@
   border-top: 1px solid #e9ecef;
   background: #f8f9fa;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 12px;
 }
 
 .btn {
   padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 100px;
-  justify-content: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex
+;
+    align-items: center;
+    gap: 8px;
+    min-width: 40%;
+    height: 50px;
+    justify-content: center;
 
   &:disabled {
     opacity: 0.6;
@@ -109,20 +111,20 @@
 }
 
 .btn-secondary {
-  background: #6c757d;
-  color: white;
+  background: #eaecf2;
+    color: #303e6c;
 
   &:hover:not(:disabled) {
-    background: #5a6268;
+    background: #e5e9f3;
   }
 }
 
 .btn-danger {
-  background: #ffc107;
-  color: #212529;
+  background: #fdf1a4;
+  color: #303e6c;
 
   &:hover:not(:disabled) {
-    background: #e0a800;
+    background: #ffbf00;
   }
 }
 
