@@ -38,6 +38,46 @@ Aplicación Angular para la gestión de productos desarrollada como prueba técn
 - Node.js 20.19+
 - npm 8
 
-👨‍💻 Autor
-Andrés Bedón
+### Ejecutar pruebas
+
+```bash
+# Ejecutar todas las pruebas
+npm test
+
+# Ejecutar con cobertura
+npm run test:coverage
+
+# Ejecutar en modo watch
+npm run test:watch
+```
+
+## 📊 Cobertura de Pruebas
+
+```
+Statements   : 88.76% ( 324/365 )
+Branches     : 74.68% ( 59/79 )
+Functions    : 94.39% ( 101/107 )
+Lines        : 91.54% ( 303/331 )
+```
+
+✅ **Cumple con el mínimo de 70% requerido**
+
+## 🔧 Configuración del Proxy
+
+Para evitar problemas de CORS, se configuró un proxy en `proxy.conf.json`:
+
+```json
+{
+  "/bp/*": {
+    "target": "http://localhost:3002",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
+```
+
+## 👨‍💻 Autor
+
+**Andrés Bedón**  
 Desarrollador Frontend
