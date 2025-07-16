@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tarjeta trasera -->
+  <rect x="12" y="8" width="32" height="20" rx="2" ry="2" fill="none" stroke="#2C3E73" stroke-width="2"></rect>
+
+  <!-- Tarjeta delantera -->
+  <rect x="8" y="16" width="32" height="20" rx="2" ry="2" fill="white" stroke="#2C3E73" stroke-width="2"></rect>
+
+  <!-- Círculo centrado en la tarjeta delantera -->
+  <circle cx="24" cy="26" r="6" fill="none" stroke="#2C3E73" stroke-width="2"></circle>
+
+  <!-- Símbolo de dólar más abajo aún -->
+  <text x="24" y="29.5" text-anchor="middle" font-size="10" font-family="Arial" fill="#2C3E73">$</text>
+</svg>

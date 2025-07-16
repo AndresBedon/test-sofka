@@ -1,0 +1,10 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo exterior -->
+  <circle cx="24" cy="24" r="20" fill="none" stroke="#2C3E73" stroke-width="2"></circle>
+
+  <!-- Punto superior de la "i" -->
+  <circle cx="24" cy="16" r="1.5" fill="#2C3E73"></circle>
+
+  <!-- Línea vertical de la "i" -->
+  <rect x="22.5" y="20" width="3" height="12" fill="#2C3E73"></rect>
+</svg>

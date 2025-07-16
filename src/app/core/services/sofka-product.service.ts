@@ -22,7 +22,7 @@ export class SofkaProductService {
   constructor(private http: HttpClient) {}
 
   /**
-   * Obtiene todos los productos financieros
+   * Obtiene todos los productos
    */
   getProducts(): Observable<SofkaProduct[]> {
     return this.http.get<ProductsResponse>(`${this.baseUrl}${API_ENDPOINTS.PRODUCTS}`)
@@ -34,7 +34,7 @@ export class SofkaProductService {
   }
 
   /**
-   * Crea un nuevo producto financiero
+   * Crea un nuevo producto
    */
   createProduct(product: ProductFormData): Observable<SofkaProduct> {
     return this.http.post<ProductResponse>(`${this.baseUrl}${API_ENDPOINTS.PRODUCTS}`, product)
@@ -46,7 +46,7 @@ export class SofkaProductService {
   }
 
   /**
-   * Actualiza un producto financiero existente
+   * Actualiza un producto existente
    */
   updateProduct(id: string, product: Omit<ProductFormData, 'id'>): Observable<SofkaProduct> {
     return this.http.put<ProductResponse>(`${this.baseUrl}${API_ENDPOINTS.PRODUCTS}/${id}`, product)
@@ -58,7 +58,7 @@ export class SofkaProductService {
   }
 
   /**
-   * Elimina un producto financiero
+   * Elimina un producto
    */
   deleteProduct(id: string): Observable<void> {
     return this.http.delete<{ message: string }>(`${this.baseUrl}${API_ENDPOINTS.PRODUCTS}/${id}`)

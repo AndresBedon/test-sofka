@@ -45,7 +45,8 @@ export interface ValidationError {
 
 // Constantes para la aplicación
 export const API_ENDPOINTS = {
-  BASE_URL: 'http://localhost:3002',
+  //BASE_URL: 'http://localhost:3002',
+  BASE_URL: '',
   PRODUCTS: '/bp/products',
   VERIFICATION: '/bp/products/verification'
 } as const;

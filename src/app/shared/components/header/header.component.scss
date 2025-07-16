@@ -1,0 +1,268 @@
+.product-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #e9ecef;
+
+  .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bank-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #0f265c;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.search-container {
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+
+  .search-input {
+    width: 300px;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: #80bdff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  color: #6c757d;
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  text-align: center;
+  padding: 60px 20px;
+
+  .error-message {
+    color: #dc3545;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .retry-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover {
+      background: #0056b3;
+    }
+  }
+}
+
+.content {
+  background: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    font-size: 14px;
+    position: relative;
+
+    .info-icon {
+      width: 14px;
+      height: 14px;
+      margin-left: 4px;
+      opacity: 0.6;
+    }
+  }
+
+  td {
+    font-size: 14px;
+    color: #212529;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .product-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #f8f9fa;
+    }
+  }
+
+  .actions-column {
+    width: 50px;
+    text-align: center;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 18px;
+    color: #6c757d;
+
+    &:hover {
+      color: #495057;
+    }
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    z-index: 1000;
+    border: 1px solid #e9ecef;
+  }
+
+  &:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    color: #212529;
+
+    &:hover {
+      background: #f8f9fa;
+    }
+
+    &.delete {
+      color: #dc3545;
+
+      &:hover {
+        background: #f5c6cb;
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+
+  .results-info {
+    font-size: 14px;
+    color: #6c757d;
+  }
+
+  .page-size-select {
+    padding: 6px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+
+    &:focus {
+      outline: none;
+      border-color: #80bdff;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .search-container .search-input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .products-table {
+    font-size: 12px;
+    
+    th, td {
+      padding: 8px 4px;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
