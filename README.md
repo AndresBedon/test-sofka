@@ -37,3 +37,7 @@ Aplicación Angular para la gestión de productos desarrollada como prueba técn
 
 - Node.js 20.19+
 - npm 8
+
+👨‍💻 Autor
+Andrés Bedón
+Desarrollador Frontend
